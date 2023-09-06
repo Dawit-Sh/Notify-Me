@@ -101,7 +101,7 @@ Here are some additional things to keep in mind:
 ## Credits
 Building this script was not easy as i had to research some commands so here are some of the resources i used 
 - [Checking the Battery’s Status via the Terminal | Baeldung on Linux](https://www.baeldung.com/linux/check-battery-status), so i can get single line command that outputs the battery status to the screen so i can use it in my [Test Constructs](https://tldp.org/LDP/abs/html/testconstructs.html)
-- [command line - How do I make my pc speaker beep - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/1974/how-do-i-make-my-pc-speaker-beep) getting a beep sound was essential because the user might be focus on other task that he does not notice the notification so i had to search for a sinlge line built in command into the linux system which would let me make a sound.
+- [command line - How do I make my pc speaker beep - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/1974/how-do-i-make-my-pc-speaker-beep) getting a beep sound was essential because the user might be focusing on other task that they do not notice the notification so i had to search for a sinlge line built in command into the linux system which would let me make a sound. because installing the package is going to be a hussle and it might not be available in some distros.
 
 
 ## License 
