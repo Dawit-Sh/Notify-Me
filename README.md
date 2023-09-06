@@ -16,10 +16,11 @@
 <p align="center">
 <ul>
 <li><a href="#how-to-use">How To Use</a></li>
+<li><a href="Dunst">Dunst</a></li>
 <li><a href="#systemd">Systemd</a></li> 
 <li><a href="#cron-tab">Cron tab</a></li>
 <li><a href="#credits">Credits</a> </li> 
-<li><a href="#license">License</a></li> 
+<li><a href="#license">License</a></li>
 </ul>
 </p>
 
@@ -44,6 +45,35 @@ $ chmod +x NotifyMe.sh
 $ ./NotifyMe.sh
 ```
 
+## Dunst 
+Now for people using i3 and other WM's might find it hard to push notification throught notify-send because for most of the time Dunst is the daemon running notification service. So there are a few fixes 
+## try installing notify-os
+```bash
+$ sudo <your-package-manager> install notify-osd
+```
+if this method does not work then we will have to do a bit of text editing.
+## sending push notification using Dunst
+```bash
+$ dunstify "Hello World!!" -u critical -h 10
+```
+if inputting this message to your terminal sends out a notification that stays on for 10s, then we are good to go.
+Using your favorite text editor _(nano, vim, nvim, vscode)_ open the NotifyMe.sh 
+
+when you open the code it will look like this now i am using my favorite editor _Vim_
+![NotifyMe.sh](https://i.imgur.com/PluOpra.png)
+
+So now in the bash script we will edit a few lines:
+```bash
+>  notify-send -t 10000 -u critical "Battery level low" "Your battery level is low. Please plug in your charger. $USER"; speaker-test -t sine -f 1000 -l 1 & sleep .9 && kill -9 $!
+```
+We will replace the ` notify-send -t 10000 -u critical "Battery level low" "Your battery level is low. Please plug in your charger. $USER"; speaker-test -t sine -f 1000 -l 1 & sleep .9 && kill -9 $!` with `dunstify "Battery level low, Please plug in your charger. $USER" -u critical -h 10`
+So the code will look like this
+```bash
+> dunstify "Battery level low, Please plug in your charger. $USER" -u critical -h 10; speaker-test -t sine -f 1000 -l 1 & sleep .9 && kill -9 $!
+```
+![NotifyMe.sh Edited](https://i.imgur.com/QigePML.png)
+
+save and run the script `./NotifyMe.sh`
 
 ## Systemd
 Now always running the script is going to be tiring and annoying so we should set up systemd to run it, for those who do not use systemd check out the <a href="#cron-tab">Cron tab</a> section
