@@ -105,4 +105,4 @@ Building this script was not easy as i had to research some commands so here are
 
 
 ## License 
-GPL v3 GNU General Public License
+GNU General Public License v3.0
