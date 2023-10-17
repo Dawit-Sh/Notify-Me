@@ -1,7 +1,7 @@
 <h1 align="center">Notify Me</h1>
 
 <div align="center">
-  A <code>6.8kb</code> Script to Notify you about your battery.
+  A <code>6.8kb</code> Script to Notify you about your battery. cause you are lazy AF.
 </div>
 
 <br />
